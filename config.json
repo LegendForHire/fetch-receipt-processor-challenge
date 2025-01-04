@@ -1,0 +1,50 @@
+{
+    "rules":[
+        {
+            "id":"retailerANCRule",
+            "type":"retailerAlphaNumericCountRule",
+            "points":1
+        },
+        {
+            "id":"wholeDollarRule",
+            "type":"centsRule",
+            "cents": ["00"],
+            "points":50
+        },
+        {
+            "id":"quarterRule",
+            "type":"centsRule",
+            "cents": ["00", "25", "50", "75"],
+            "points":25
+        },
+        {
+            "id":"5pointPer2ItemRule",
+            "type":"itemCountRule",
+            "threshhold": 2,
+            "points":5
+        },
+        {
+            "id":"itemDescriptionMod3Rule",
+            "type":"itemDescriptionModAndPriceRule",
+            "modulo":3,
+            "result":0,
+            "roundUp":true,
+            "points":0.2
+        },
+        {
+            "id":"oddDayRule",
+            "type":"dayModRule",
+            "modulo": 2,
+            "result": 1,
+            "points":6
+        },
+        {
+            "id":"happyHourRule",
+            "type":"timeRule",
+            "startTime": "14:00",
+            "endTime": "16:00",
+            "points":10
+        }
+
+    ]
+}
